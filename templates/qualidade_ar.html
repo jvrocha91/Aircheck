@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Índice de Qualidade do Ar</title>
+        <style>
+            form {
+                margin-bottom: 1em;
+            }
+
+            input {
+                margin-bottom: 0.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Índice de Qualidade do Ar</h1>
+        <form action="/qualidade_ar" method="post">
+            <label for="MP10">MP10:</label><br>
+            <input type="number" id="MP10" name="MP10"><br>
+            <label for="MP25">MP25:</label><br>
+            <input type="number" id="MP25" name="MP25"><br>
+            <label for="O3">O3:</label><br>
+            <input type="number" id="O3" name="O3"><br>
+            <label for="CO">CO:</label><br>
+            <input type="number" id="CO" name="CO"><br>
+            <label for="NO2">NO2:</label><br>
+            <input type="number" id="NO2" name="NO2"><br>
+            <label for="SO2">SO2:</label><br>
+            <input type="number" id="SO2" name="SO2"><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% if qualidade_ar %}
+        <h2>Qualidade do Ar: {{ qualidade_ar }}</h2>
+        <p>{{ efeitos_saude }}</p>
+        {% endif %}
+    </body>
+</html>
